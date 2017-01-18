@@ -10,22 +10,29 @@ function convertRomain(nombre){
 
     this.converteur=function(){
         var nombre;
-        if(this.nombre<10){
-
-            nombre = this.convertUnite(this.nombre);
-        }
-        else if((this.nombre>=10)&&(this.nombre<100)){
-
-            nombre = this.convertNombreEntier(this.nombre);
-        }
-        else if((this.nombre>=100)&&(this.nombre<1000)) {
-
-            nombre = this.convertCentaine(this.nombre);
+        if(isNaN(this.nombre)){
+            console.error( this.nombre+" is not a number");
         }
         else{
-            nombre = this.convertMille(this.nombre);
+            if(this.nombre<10){
+
+                nombre = this.convertUnite(this.nombre);
+            }
+            else if((this.nombre>=10)&&(this.nombre<100)){
+
+                nombre = this.convertNombreEntier(this.nombre);
+            }
+            else if((this.nombre>=100)&&(this.nombre<1000)) {
+
+                nombre = this.convertCentaine(this.nombre);
+            }
+            else{
+                nombre = this.convertMille(this.nombre);
+            }
+            return nombre
         }
-        return nombre
+
+
     }
 
 
