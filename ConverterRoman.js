@@ -18,12 +18,39 @@ function convertRomain(nombre){
 
             nombre = this.convertNombreEntier(this.nombre);
         }
-        else {
+        else if((this.nombre>=100)&&(this.nombre<1000)) {
 
             nombre = this.convertCentaine(this.nombre);
         }
+        else{
+            nombre = this.convertMille(this.nombre);
+        }
         return nombre
     }
+
+
+
+    this.convertMille=function(nb)
+    {
+        var resultat = [];
+        var difference ;
+        var unite;
+        for(var i = 1000;i<=nb;i+=1000){
+            difference = nb-i;
+            if((difference>100)&&(difference<1000)){
+                unite = this.convertCentaine(difference);
+
+            }else{
+                resultat.push('M');
+
+            }
+        }
+        resultat = resultat.concat(unite);
+        return resultat.join('');
+    } ;
+
+
+
 
     //converti les centaines les nombre jusqu'a 1000 en chiffre romain
     //@ return ARRAY joiner
