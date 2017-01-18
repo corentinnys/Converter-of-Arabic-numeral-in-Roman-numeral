@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Convertisseur</h1>
+<input type="text">
+<button>Converter of Arabic numeral in Roman <numeral></numeral></button>
+
+<script src="ConverterRoman.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    $('button').click(function(){
+        var valeur = $(this).siblings('input').val();
+        var test = new convertRomain(valeur);
+        $(this).siblings('input').val(test.converteur());
+
+    })
+
+    var test = new convertRomain(10);
+    console.log(test.converteur());
+
+</script>
+</body>
+</html>
